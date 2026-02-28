@@ -8,7 +8,7 @@ vector <int> leadersInArray(vector <int>& arr){
     int maxi = INT_MIN;
     for(int i = n-1; i >= 0; i++){
         
-        if(arr[i] > maxi){
+        if(maxi < arr[i]){
             maxi = arr[i];
             ans.push_back(arr[i]);
         }

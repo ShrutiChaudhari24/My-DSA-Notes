@@ -24,6 +24,33 @@ int Longest_Consecutive_Sequence(vector <int>& arr){
     }
     return maxCount;
 }
+
+int longestConsecutive(vector<int>& nums) {
+    int n = nums.size();
+
+    if(n == 0) return 0;
+
+    int longest = 1;
+    unordered_set <int> st;
+
+    for(int i = 0; i < n; i++){
+        st.insert(nums[i]);
+    }
+
+    for(auto it : st){
+        if(st.find(it-1) == st.end()){  // if this is true means we does not found smaller element than it so then enter loop ager smaller element mila hai tho do nothing
+            int cnt = 1;    // != end() ka matbal hota hai we found // == end() ka matlab hota hai we dont found
+            int x = it;
+            
+            while(st.find(x+1) != st.end()){ // ager x sae greater element mila tho loop mae enter karo 
+                x = x+1;
+                cnt = cnt + 1;
+            }
+            longest = max (longest,cnt);
+        }
+    }
+        return longest;
+    }
 int main(){
     string s;
     getline(cin,s);
@@ -43,8 +70,10 @@ int main(){
     }
 
     int ans = Longest_Consecutive_Sequence(arr);
+    int ans2 = Longest_Consecutive_Sequence(arr);
 
-    cout << ans;
+    cout << ans << endl;
+    cout << ans2 << endl;
     
     return 0;
 }
