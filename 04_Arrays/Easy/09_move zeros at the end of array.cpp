@@ -46,6 +46,18 @@ void MoveZerosAtEnd2(vector <int> & arr, int n){
     }
 
 }
+// most easy code amd most optimal
+ void moveZeroes(vector<int>& nums) {
+
+        int j = 0;
+
+        for(int i = 0; i < nums.size(); i++){
+            if(nums[i] != 0){
+                swap(nums[i], nums[j]);
+                j++;
+            }
+        }
+    }
 
 void print (vector <int>& nums, int n){
      for (int i = 0; i < n; i++){
