@@ -15,25 +15,25 @@ struct Node{
 void preorder(Node* node){
     if(node == nullptr) return;
 
-    cout << node->data << " ";
-    preorder(node->left);     
-    preorder(node->right);    
+    cout << node->data << " "; // this is root
+    preorder(node->left);     // left
+    preorder(node->right);    // right
 }
 
 void inorder(Node* node){
     if(node == nullptr) return;
 
-    inorder(node->left);      
-    cout << node->data << " ";
-    inorder(node->right);    
+    inorder(node->left);   // left   
+    cout << node->data << " "; // root
+    inorder(node->right);    // right
 }
 
 void postorder(Node* node){
     if(node == nullptr) return;
 
-    postorder(node->left);    
-    postorder(node->right);   
-    cout << node->data << " ";
+    postorder(node->left);    // left
+    postorder(node->right);   // right
+    cout << node->data << " "; // root
 }
 
 int main(){
